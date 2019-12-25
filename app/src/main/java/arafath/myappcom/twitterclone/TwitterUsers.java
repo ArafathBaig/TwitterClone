@@ -61,7 +61,14 @@ public class TwitterUsers extends AppCompatActivity implements AdapterView.OnIte
                             }
 
                             listView.setAdapter(arrayAdapter);
+                            if (ParseUser.getCurrentUser().getList("fanOf") != null) {
+                                for (String twitUsers : list) {
+                                    if (ParseUser.getCurrentUser().getList("fanOf").contains(twitUsers)) {
+                                        listView.setItemChecked(list.indexOf(twitUsers), true);
+                                    }
+                                }
 
+                            }
                         }
                     }
                 }
