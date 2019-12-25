@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void done(ParseUser userr, ParseException e) {
                             if(userr != null && e == null){
-                                FancyToast.makeText(LoginActivity.this, userr.toString() + " LoggedIn", FancyToast.SUCCESS, Toast.LENGTH_SHORT, true).show();
+                                FancyToast.makeText(LoginActivity.this, userr.getUsername() + " LoggedIn", FancyToast.SUCCESS, Toast.LENGTH_SHORT, true).show();
                                 transitionToMainActivity();
                             }else{
                                 FancyToast.makeText(LoginActivity.this, e.getMessage(), FancyToast.ERROR, Toast.LENGTH_SHORT, true).show();
