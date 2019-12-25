@@ -6,6 +6,11 @@
         android:id="@+id/logOutUser"
         android:orderInCategory="100"
         android:title="Log Out"
-        app:showAsAction="never"/>
-
+        app:showAsAction="always"/>
+    <item
+    android:id="@+id/sendTweet"
+    android:orderInCategory="101"
+    android:title="Send Tweet"
+    android:icon="@drawable/ic_send_black_24dp"
+    app:showAsAction="always"/>
 </menu>
