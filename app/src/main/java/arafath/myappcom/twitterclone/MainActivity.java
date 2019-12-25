@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clickText.setOnClickListener(this);
 
         if(ParseUser.getCurrentUser() != null){
-//            transitionToMainActivity();
+            transitionToMainActivity();
         }
 
     }
@@ -65,13 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.signupButton:
 
-                if (mail.getText().toString() == "" || username.getText().toString() == "" || password.getText().toString() == "") {
+                if (mail.getText().toString().equals("") || username.getText().toString().equals("") || password.getText().toString().equals("")) {
                     FancyToast.makeText(this, "Email, username, password required", FancyToast.INFO, Toast.LENGTH_SHORT, true).show();
                 } else {
                     final ParseUser appUser = new ParseUser();
                     appUser.setEmail(mail.getText().toString());
                     appUser.setUsername(username.getText().toString());
-                    appUser.setPassword(username.getText().toString());
+                    appUser.setPassword(password.getText().toString());
 
                     final ProgressDialog progressDialog = new ProgressDialog(this);
                     progressDialog.setMessage("Signing up " + username.getText().toString());

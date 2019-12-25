@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -37,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         signUpText = findViewById(R.id.signupText);
 
         if(ParseUser.getCurrentUser() != null){
-//            transitionToMainActivity();
+            transitionToMainActivity();
         }
 
         login.setOnClickListener(this);
@@ -51,13 +52,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
 
             case R.id.loginBut:
-                final ProgressDialog progressDialog = new ProgressDialog(this);
-                progressDialog.setMessage("Logging in");
-                progressDialog.show();
+
+
+
                 if(user.getText().toString().equals("") || pass.getText().toString().equals("")){
                     FancyToast.makeText(this,"Username,Password required",FancyToast.SUCCESS, Toast.LENGTH_SHORT,true).show();
                 }else{
                     ParseUser.logInInBackground(user.getText().toString(), pass.getText().toString(), new LogInCallback() {
+
+
                         @Override
                         public void done(ParseUser userr, ParseException e) {
                             if(userr != null && e == null){
@@ -69,7 +72,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }
                         }
                     });
-                    progressDialog.dismiss();
                 }
                 break;
 
