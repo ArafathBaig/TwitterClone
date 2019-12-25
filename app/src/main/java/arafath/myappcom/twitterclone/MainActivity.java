@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clickText.setOnClickListener(this);
 
         if(ParseUser.getCurrentUser() != null){
-            transitionToMainActivity();
+//            transitionToMainActivity();
         }
 
     }

@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/logPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/logPass" />
 
     <TextView
         android:id="@+id/textView"
