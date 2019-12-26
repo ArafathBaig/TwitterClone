@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -119,7 +120,7 @@ public class TwitterUsers extends AppCompatActivity implements AdapterView.OnIte
         CheckedTextView checkedTextView = (CheckedTextView) view;
 
         if(checkedTextView.isChecked()){
-            FancyToast.makeText(this,list.get(position)+" is Followed", Toast.LENGTH_SHORT,FancyToast.INFO,true).show();
+            FancyToast.makeText(this,"Following "+list.get(position), Toast.LENGTH_SHORT,FancyToast.INFO,true).show();
             ParseUser.getCurrentUser().add("fanOf",list.get(position));
         }else{
             FancyToast.makeText(this,list.get(position)+" is UnFollowed", Toast.LENGTH_SHORT,FancyToast.INFO,true).show();
@@ -133,7 +134,7 @@ public class TwitterUsers extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void done(ParseException e) {
                 if(e == null){
-                    FancyToast.makeText(TwitterUsers.this,"Changes Made", Toast.LENGTH_SHORT,FancyToast.INFO,true).show();
+                    Log.i("Check","Changes Made");
 
                 }
             }
